@@ -9,13 +9,7 @@ brew tap ModernRelay/tap
 brew install ModernRelay/tap/omnigraph
 ```
 
-## Latest `main`
-
-```bash
-brew install --HEAD ModernRelay/tap/omnigraph
-```
-
 ## Notes
 
-- The current formula is pinned to the latest public `0.4.0` source snapshot.
-- Once versioned public tags are published, the formula will switch to tagged releases.
+- The formula installs prebuilt binaries from the latest stable public Omnigraph release.
+- Current stable version: `v0.1.0`
