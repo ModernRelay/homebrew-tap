@@ -1,0 +1,46 @@
+name: Formula Audit
+
+# Independent CI for the tap (the gap iss-dx-brew-install-broken called out: the
+# engine's release pipeline audits the formula it generates, but the tap repo
+# itself had no CI, so a hand-edited formula here was never linted). This gates
+# every change to the formula on `brew style` + `brew audit` so a malformed
+# formula can't land on `main` and break `brew install` for users.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "Formula/**"
+      - ".github/workflows/audit.yml"
+  pull_request:
+    paths:
+      - "Formula/**"
+      - ".github/workflows/audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    name: brew style + audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout tap
+        uses: actions/checkout@v5.0.1
+
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Style + audit formula
+        run: |
+          # Register this checkout as the `modernrelay/tap` tap so the
+          # `modernrelay/tap/omnigraph` formula ref resolves (brew audit rejects
+          # bare paths and needs tap context). Offline audit (no --online) keeps
+          # CI deterministic and network-independent while still catching the
+          # structural/ComponentsOrder class of formula defects.
+          tap_dir="$(brew --repository)/Library/Taps/modernrelay/homebrew-tap"
+          mkdir -p "$(dirname "$tap_dir")"
+          ln -sfn "$PWD" "$tap_dir"
+          brew style modernrelay/tap/omnigraph
+          brew audit --strict modernrelay/tap/omnigraph
