@@ -1,7 +1,6 @@
 class Omnigraph < Formula
   desc "Typed property graph database with Git-style workflows"
   homepage "https://github.com/ModernRelay/omnigraph"
-  version "0.13.0"
   license "MIT"
   head "https://github.com/ModernRelay/omnigraph.git", branch: "main"
 
