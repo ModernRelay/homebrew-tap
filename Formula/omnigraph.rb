@@ -1,7 +1,7 @@
 class Omnigraph < Formula
   desc "Typed property graph database with Git-style workflows"
   homepage "https://github.com/ModernRelay/omnigraph"
-  version "0.12.0"
+  version "0.13.0"
   license "MIT"
   head "https://github.com/ModernRelay/omnigraph.git", branch: "main"
 
@@ -13,19 +13,19 @@ class Omnigraph < Formula
   on_macos do
     depends_on arch: :arm64
     on_arm do
-      url "https://github.com/ModernRelay/omnigraph/releases/download/v0.12.0/omnigraph-macos-arm64.tar.gz"
-      sha256 "72b9ac379139c4dfe32fb75af5d976187a5e108c2c15169cf34231ab8cc34f5f"
+      url "https://github.com/ModernRelay/omnigraph/releases/download/v0.13.0/omnigraph-macos-arm64.tar.gz"
+      sha256 "0a1c7f013e18465254fb925dc177f3089bf6e0cfe4a0ecfc9908a180ab84cc72"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/ModernRelay/omnigraph/releases/download/v0.12.0/omnigraph-linux-x86_64.tar.gz"
-      sha256 "ef0e0772c9a74ea8979bb459d2f5b8ed00dbd1f2e06cc70eed91069ba87c9189"
+      url "https://github.com/ModernRelay/omnigraph/releases/download/v0.13.0/omnigraph-linux-x86_64.tar.gz"
+      sha256 "0123daa64f0f2db9860284200bd71c79a22a6ad2c6f5501b6fca24cac86a7a30"
     end
     on_arm do
-      url "https://github.com/ModernRelay/omnigraph/releases/download/v0.12.0/omnigraph-linux-arm64.tar.gz"
-      sha256 "2f54cd9d7520f10a9b4b0c7e8974fa2d5175c87170f149749d471e96250e1a67"
+      url "https://github.com/ModernRelay/omnigraph/releases/download/v0.13.0/omnigraph-linux-arm64.tar.gz"
+      sha256 "e61e7379131a05056bfeace206c8c5bcdf185d169d1ce86bc192d52f13693f96"
     end
   end
 
