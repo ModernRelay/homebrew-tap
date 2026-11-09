@@ -12,19 +12,19 @@ class Omnigraph < Formula
   on_macos do
     depends_on arch: :arm64
     on_arm do
-      url "https://github.com/ModernRelay/omnigraph/releases/download/v0.14.0/omnigraph-macos-arm64.tar.gz"
-      sha256 "91c8af54b859f023c42e2d3db37a2f3a361def0d6bb093530d53d3357986db83"
+      url "https://github.com/ModernRelay/omnigraph/releases/download/v0.15.0/omnigraph-macos-arm64.tar.gz"
+      sha256 "c783dc9d0e3660b74a9c2e6c5591bf1e4df9a763ce322958526c0872e9ca1aec"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/ModernRelay/omnigraph/releases/download/v0.14.0/omnigraph-linux-x86_64.tar.gz"
-      sha256 "02bde3e3a2c6c8cf50dc9739a8b1041df87cfeaa6ab59f620e1d8e32acffd4d9"
+      url "https://github.com/ModernRelay/omnigraph/releases/download/v0.15.0/omnigraph-linux-x86_64.tar.gz"
+      sha256 "d7312ce49abca47a6bb47956b6987d32f650fa91678be1abd10e02824937bb15"
     end
     on_arm do
-      url "https://github.com/ModernRelay/omnigraph/releases/download/v0.14.0/omnigraph-linux-arm64.tar.gz"
-      sha256 "f7e731cbd1d6c1e13548d5995c0abff74a86b0efdd4367b457ada9a884b855ff"
+      url "https://github.com/ModernRelay/omnigraph/releases/download/v0.15.0/omnigraph-linux-arm64.tar.gz"
+      sha256 "fa1082636bb3927d61dcf9d22bb4e08eb0fb446d08e746738869e40c363b4755"
     end
   end
 
